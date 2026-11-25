@@ -25,11 +25,12 @@ BASE_DIR = Path(_file_).resolve().parent
 
 DATA_DIR = BASE_DIR / "data"
 
-# Jika folder data tidak tersedia atau CSV tidak lengkap,
-# baca CSV langsung dari folder utama repository.
 if not all(
     (DATA_DIR / name).exists()
-    for name in ("winequality-red.csv", "winequality-white.csv")
+    for name in (
+        "winequality-red.csv",
+        "winequality-white.csv"
+    )
 ):
     DATA_DIR = BASE_DIR
 
